@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "jsx": "react"
+    },
+    "include": [
+      "index.html",
+      "app.js"
+    ]
+  }
+  
