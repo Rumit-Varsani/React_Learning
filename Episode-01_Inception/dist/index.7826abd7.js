@@ -2986,7 +2986,6 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Name, {}, void 0, false, {
     lineNumber: 16,
     columnNumber: 15
 }, undefined));
-ewrwer;
 var _c, _c1;
 $RefreshReg$(_c, "Title");
 $RefreshReg$(_c1, "Name");
