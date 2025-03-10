@@ -1,0 +1,38 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    border: 1px solid black;
+}
+.logo{
+    height: 100px;
+}
+.nav-item>ul{
+    display: flex;
+    list-style-type: none;
+    
+}
+.res-card{
+    margin: 5px;
+    width: 150px;
+    background-color: #f0f0f0;
+}
+.res-card:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+.f-img {
+    width: 100%; /* Ensures the image takes the full width of the card */
+    height: 100px; /* Set a fixed height (adjust as needed) */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin: px;
+  }
+  
+.Search{
+    padding: 10px;
+}
+.res-container{
+
+    display: flex;
+    flex-wrap: wrap;
+}
