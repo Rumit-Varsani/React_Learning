@@ -36,3 +36,6 @@
     display: flex;
     flex-wrap: wrap;
 }
+.short-btn{
+    margin: 10px;
+}

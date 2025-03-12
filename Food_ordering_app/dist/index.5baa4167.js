@@ -18878,39 +18878,57 @@ var _mockdata = require("../Utils/mockdata");
 var _mockdataDefault = parcelHelpers.interopDefault(_mockdata);
 var _resturentCard = require("./ResturentCard");
 var _resturentCardDefault = parcelHelpers.interopDefault(_resturentCard);
+var _react = require("react");
+var _s = $RefreshSig$();
 const Body = ()=>{
+    _s();
+    const [filteredResturant, setfiltredResturant] = (0, _react.useState)((0, _mockdataDefault.default));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "Search",
-                children: "Search"
+                className: "short-list",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "short-btn",
+                    onClick: ()=>{
+                        const filteredlist = (0, _mockdataDefault.default).filter((res)=>res.info.avgRating > 4.3);
+                        setfiltredResturant(filteredlist);
+                        // Add your sorting function logic here
+                        console.log("Sorting the Restaurant");
+                    },
+                    children: "Sort the Restaurant"
+                }, void 0, false, {
+                    fileName: "src/component/Body.js",
+                    lineNumber: 9,
+                    columnNumber: 13
+                }, undefined)
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 6,
+                lineNumber: 8,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res-container",
-                children: (0, _mockdataDefault.default).map((resList)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturentCardDefault.default), {
+                children: filteredResturant.map((resList)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturentCardDefault.default), {
                         resData: resList
                     }, resList.info.id, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 9,
+                        lineNumber: 20,
                         columnNumber: 13
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 7,
+                lineNumber: 18,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Body.js",
-        lineNumber: 5,
+        lineNumber: 7,
         columnNumber: 7
     }, undefined);
 };
+_s(Body, "2F3lOQ93S0bPYxrvYYDRI02SfDI=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -18921,7 +18939,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Utils/mockdata":"1wbT5","./ResturentCard":"3gpOv"}],"1wbT5":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Utils/mockdata":"1wbT5","./ResturentCard":"3gpOv","react":"21dqq"}],"1wbT5":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 const resList = [
