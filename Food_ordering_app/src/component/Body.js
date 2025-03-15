@@ -1,58 +1,61 @@
 import ResturentCard from "./ResturentCard";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const Body = () => {
-    const[filteredResturant,setfiltredResturant] = useState([]);
+    const [filteredResturant, setFilteredResturant] = useState([]);
 
-    useEffect(()=>{
-      console.log("useEffect called!");
-      fetchData();
-    },[]);
+    useEffect(() => {
+        console.log("useEffect called!");
+        fetchData();
+    }, []);
 
     const fetchData = async () => {
-      try {
-          const response = await fetch(
-              "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=19.0759837&lng=72.8776559&carousel=true&third_party_vendor=1"
-          );
-          const jsondata = await response.json();
-          
-          console.log("Full API Response:", jsondata); // Log the entire response
-  
-          // Extract restaurant data
-          const restaurants = jsondata?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
-  
-          console.log("Extracted Restaurants:", restaurants);
-  
-          setfiltredResturant(restaurants);
-  
-      } catch (error) {
-          console.error("Error fetching data:", error);
-      }
-  };
-  
+        try {
+            const response = await fetch(
+                "https://mocki.io/v1/a75bfba8-033c-4a47-bc84-8787857dece0"
+            );
+            const jsondata = await response.json();
 
+            console.log("Full API Response:", jsondata); // Log the entire response
+
+            // Extract restaurant data
+            const restaurants =
+                jsondata?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+
+            console.log("Extracted Restaurants:", restaurants);
+
+            setFilteredResturant(restaurants);
+
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
 
     console.log("Body Called!");
-    return( 
-      <div className="body">
-        <div className="short-list">
-            <button className="short-btn" onClick={() => { 
-                const filteredlist =resList.filter(res=>res.info.avgRating>4.3); 
-                setfiltredResturant(filteredlist);
-                // Add your sorting function logic here
-                console.log("Sorting the Restaurant");
-            }}>
-                Sort the Restaurant
-            </button>
+
+    return (
+        <div className="body">
+            <div className="short-list">
+                <button
+                    className="short-btn"
+                    onClick={() => {
+                        const filteredList = filteredResturant.filter(
+                            (res) => res.info.avgRating > 4.3
+                        );
+                        setFilteredResturant(filteredList);
+                        console.log("Sorting the Restaurant");
+                    }}
+                >
+                    Sort the Restaurant
+                </button>
+            </div>
+            <div className="res-container">
+                {filteredResturant.map((restaurant) => (
+                    <ResturentCard key={restaurant.info.id} resData={restaurant} />
+                ))}
+            </div>
         </div>
-        <div className="res-container">
-          {filteredResturant.map((resList)=>(
-            <ResturentCard key={resList.info.id} resData={resList} />
-          ))}
-        </div>
-        
-      </div>
-      
     );
-  };
-  export default Body
+};
+
+export default Body;

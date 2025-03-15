@@ -18880,20 +18880,20 @@ var _react = require("react");
 var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
-    const [filteredResturant, setfiltredResturant] = (0, _react.useState)([]);
+    const [filteredResturant, setFilteredResturant] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
         console.log("useEffect called!");
         fetchData();
     }, []);
     const fetchData = async ()=>{
         try {
-            const response = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=19.0759837&lng=72.8776559&carousel=true&third_party_vendor=1");
+            const response = await fetch("https://mocki.io/v1/a75bfba8-033c-4a47-bc84-8787857dece0");
             const jsondata = await response.json();
             console.log("Full API Response:", jsondata); // Log the entire response
             // Extract restaurant data
             const restaurants = jsondata?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
             console.log("Extracted Restaurants:", restaurants);
-            setfiltredResturant(restaurants);
+            setFilteredResturant(restaurants);
         } catch (error) {
             console.error("Error fetching data:", error);
         }
@@ -18907,44 +18907,43 @@ const Body = ()=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                     className: "short-btn",
                     onClick: ()=>{
-                        const filteredlist = resList.filter((res)=>res.info.avgRating > 4.3);
-                        setfiltredResturant(filteredlist);
-                        // Add your sorting function logic here
+                        const filteredList = filteredResturant.filter((res)=>res.info.avgRating > 4.3);
+                        setFilteredResturant(filteredList);
                         console.log("Sorting the Restaurant");
                     },
                     children: "Sort the Restaurant"
                 }, void 0, false, {
                     fileName: "src/component/Body.js",
                     lineNumber: 39,
-                    columnNumber: 13
+                    columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/component/Body.js",
                 lineNumber: 38,
-                columnNumber: 9
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res-container",
-                children: filteredResturant.map((resList1)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturentCardDefault.default), {
-                        resData: resList1
-                    }, resList1.info.id, false, {
+                children: filteredResturant.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturentCardDefault.default), {
+                        resData: restaurant
+                    }, restaurant.info.id, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 50,
-                        columnNumber: 13
+                        lineNumber: 54,
+                        columnNumber: 21
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 48,
-                columnNumber: 9
+                lineNumber: 52,
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Body.js",
         lineNumber: 37,
-        columnNumber: 7
+        columnNumber: 9
     }, undefined);
 };
-_s(Body, "aQ817BXdFwkiHVr8OfzeVg/fvI0=");
+_s(Body, "xuwP+dWG6oEmRD9/XNVEnKxxU9Y=");
 _c = Body;
 exports.default = Body;
 var _c;
