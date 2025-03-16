@@ -39,3 +39,6 @@
 .short-btn{
     margin: 10px;
 }
+.login{
+    cursor: pointer;
+}
