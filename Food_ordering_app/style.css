@@ -1,3 +1,6 @@
+*{
+    
+}
 .Header{
     display: flex;
     justify-content: space-between;
@@ -41,4 +44,11 @@
 }
 .login{
     cursor: pointer;
+}
+.short-list{
+    display: flex;
+    
+}
+.search{
+    margin: 10px;
 }

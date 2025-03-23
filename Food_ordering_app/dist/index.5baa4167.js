@@ -18903,18 +18903,21 @@ var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
     const [filteredResturant, setFilteredResturant] = (0, _react.useState)([]);
+    const [data, setData] = (0, _react.useState)([]);
+    const [searchText, setsearchText] = (0, _react.useState)("");
     (0, _react.useEffect)(()=>{
         console.log("useEffect called!");
         fetchData();
     }, []);
     const fetchData = async ()=>{
         try {
-            const response = await fetch("https://mocki.io/v1/a75bfba8-033c-4a47-bc84-8787857dece0");
+            const response = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=21.1702401&lng=72.83106070000001&carousel=true&third_party_vendor=1");
             const jsondata = await response.json();
             console.log("Full API Response:", jsondata); // Log the entire response
             // Extract restaurant data
-            const restaurants = jsondata?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+            const restaurants = jsondata?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             console.log("Extracted Restaurants:", restaurants);
+            setData(restaurants);
             setFilteredResturant(restaurants);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -18926,23 +18929,59 @@ const Body = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "short-list",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    className: "short-btn",
-                    onClick: ()=>{
-                        const filteredList = filteredResturant.filter((res)=>res.info.avgRating > 4.3);
-                        setFilteredResturant(filteredList);
-                        console.log("Sorting the Restaurant");
-                    },
-                    children: "Sort the Restaurant"
-                }, void 0, false, {
-                    fileName: "src/component/Body.js",
-                    lineNumber: 39,
-                    columnNumber: 17
-                }, undefined)
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "search",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                className: "search-box",
+                                value: searchText,
+                                onChange: (e)=>{
+                                    setsearchText(e.target.value);
+                                }
+                            }, void 0, false, {
+                                fileName: "src/component/Body.js",
+                                lineNumber: 42,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: ()=>{
+                                    const filteredsearch = data.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                                    console.log("before", filteredsearch);
+                                    setFilteredResturant(filteredsearch);
+                                    console.log("after", filteredsearch);
+                                },
+                                children: "Search"
+                            }, void 0, false, {
+                                fileName: "src/component/Body.js",
+                                lineNumber: 51,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 41,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "short-btn",
+                        onClick: ()=>{
+                            const filteredList = filteredResturant.filter((res)=>res.info.avgRating > 4.3);
+                            setFilteredResturant(filteredList);
+                            console.log("Sorting the Restaurant");
+                        },
+                        children: "Sort the Restaurant"
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 67,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 38,
-                columnNumber: 13
+                lineNumber: 40,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res-container",
@@ -18950,22 +18989,22 @@ const Body = ()=>{
                         resData: restaurant
                     }, restaurant.info.id, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 54,
-                        columnNumber: 21
+                        lineNumber: 82,
+                        columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 52,
-                columnNumber: 13
+                lineNumber: 80,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Body.js",
-        lineNumber: 37,
-        columnNumber: 9
+        lineNumber: 39,
+        columnNumber: 5
     }, undefined);
 };
-_s(Body, "xuwP+dWG6oEmRD9/XNVEnKxxU9Y=");
+_s(Body, "V0YKuaDY58gA0Ak32VM/jG3kz7k=");
 _c = Body;
 exports.default = Body;
 var _c;
