@@ -12,10 +12,9 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    try {
+   
       const response = await fetch(
-        "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=21.1702401&lng=72.83106070000001&carousel=true&third_party_vendor=1"
-      );
+        "https://mocki.io/v1/ca91595a-a813-4237-85cb-ca29d32c7ddb");
       const jsondata = await response.json();
       
       console.log("Full API Response:", jsondata); // Log the entire response
@@ -28,9 +27,7 @@ const Body = () => {
       console.log("Extracted Restaurants:", restaurants);
       setData(restaurants)
       setFilteredResturant(restaurants);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    
   };
 
   console.log("Body Called!");
