@@ -2,15 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/component/Header";
 import Body from "./src/component/Body";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider,Outlet } from "react-router-dom";
 import About from "./src/component/About";
+import Contact from "./src/component/Contact";
 
 // App Layout component
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Body />
+      <Outlet />
     </div>
   );
 };
@@ -20,11 +21,22 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    children:[
+    {
+      path:"/",
+      element:<Body />,
+    },
+    {
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/contact",
+      element: <Contact/>,
+    },
+  ],
   },
-  {
-    path: "/about",
-    element: <About />,
-  },
+  
 ]);
 
 // Create root and render the RouterProvider
