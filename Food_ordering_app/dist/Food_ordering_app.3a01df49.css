@@ -1,6 +1,7 @@
 .Header {
   border: 1px solid #000;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   display: flex;
 }
@@ -10,6 +11,8 @@
 }
 
 .nav-item > ul {
+  align-items: center;
+  gap: 10px;
   list-style-type: none;
   display: flex;
 }

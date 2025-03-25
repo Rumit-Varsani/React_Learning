@@ -18811,7 +18811,7 @@ const Body = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/component/Body.js",
-                                lineNumber: 39,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -18824,13 +18824,13 @@ const Body = ()=>{
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "src/component/Body.js",
-                                lineNumber: 48,
+                                lineNumber: 45,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 38,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -18843,13 +18843,13 @@ const Body = ()=>{
                         children: "Sort the Restaurant"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 64,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 37,
+                lineNumber: 35,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -18858,22 +18858,22 @@ const Body = ()=>{
                         resData: restaurant
                     }, restaurant.info.id, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 79,
+                        lineNumber: 75,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 77,
+                lineNumber: 73,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Body.js",
-        lineNumber: 36,
+        lineNumber: 34,
         columnNumber: 5
     }, undefined);
 };
-_s(Body, "V0YKuaDY58gA0Ak32VM/jG3kz7k=");
+_s(Body, "mEBcAf01LWBa8DC8IfUMsD8OEig=");
 _c = Body;
 exports.default = Body;
 var _c;

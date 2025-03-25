@@ -2,9 +2,8 @@ import ResturentCard from "./ResturentCard";
 import { useEffect, useState } from "react";
 
 const Body = () => {
-    
   const [filteredResturant, setFilteredResturant] = useState([]);
-    const[data,setData] = useState([]);
+  const [data, setData] = useState([]);
   const [searchText, setsearchText] = useState("");
   useEffect(() => {
     console.log("useEffect called!");
@@ -12,22 +11,21 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-   
-      const response = await fetch(
-        "https://mocki.io/v1/ca91595a-a813-4237-85cb-ca29d32c7ddb");
-      const jsondata = await response.json();
-      
-      console.log("Full API Response:", jsondata); // Log the entire response
+    const response = await fetch(
+      "https://mocki.io/v1/ca91595a-a813-4237-85cb-ca29d32c7ddb"
+    );
+    const jsondata = await response.json();
 
-      // Extract restaurant data
-      const restaurants =
-        jsondata?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
+    console.log("Full API Response:", jsondata); // Log the entire response
 
-      console.log("Extracted Restaurants:", restaurants);
-      setData(restaurants)
-      setFilteredResturant(restaurants);
-    
+    // Extract restaurant data
+    const restaurants =
+      jsondata?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+
+    console.log("Extracted Restaurants:", restaurants);
+    setData(restaurants);
+    setFilteredResturant(restaurants);
   };
 
   console.log("Body Called!");
@@ -41,21 +39,19 @@ const Body = () => {
             className="search-box"
             value={searchText}
             onChange={(e) => {
-                
               setsearchText(e.target.value);
             }}
           />
           <button
             onClick={() => {
-                
-              const filteredsearch = data.filter(
-                (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()) 
+              const filteredsearch = data.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
 
-              console.log("before",filteredsearch);
+              console.log("before", filteredsearch);
               setFilteredResturant(filteredsearch);
-             
-              console.log("after",filteredsearch);
+
+              console.log("after", filteredsearch);
             }}
           >
             Search

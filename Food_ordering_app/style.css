@@ -1,19 +1,22 @@
 *{
     
 }
-.Header{
+.Header {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Centers items vertically */
     padding: 10px 10px;
     border: 1px solid black;
 }
+
 .logo{
     height: 100px;
 }
-.nav-item>ul{
+.nav-item > ul {
     display: flex;
     list-style-type: none;
-    
+    align-items: center;
+    gap: 10px; /* Adds space between menu items */
 }
 .res-card{
     margin: 5px;
