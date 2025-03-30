@@ -25088,14 +25088,22 @@ const Body = ()=>{
         fetchData();
     }, []);
     const fetchData = async ()=>{
-        const response = await fetch("https://mocki.io/v1/ca91595a-a813-4237-85cb-ca29d32c7ddb");
-        const jsondata = await response.json();
-        console.log("Full API Response:", jsondata); // Log the entire response
-        // Extract restaurant data
-        const restaurants = jsondata?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        console.log("Extracted Restaurants:", restaurants);
-        setData(restaurants);
-        setFilteredResturant(restaurants);
+        try {
+            const response = await fetch("https://mocki.io/v1/6861b5ad-c174-481b-aff8-17c053006c8a");
+            const jsondata = await response.json();
+            console.log("Full API Response:", jsondata); // Debugging
+            // Extract restaurant data correctly
+            const restaurants = jsondata?.infoWithStyle?.restaurants || [];
+            if (!Array.isArray(restaurants)) {
+                console.error("Invalid restaurant data:", restaurants);
+                return;
+            }
+            console.log("Extracted Restaurants:", restaurants);
+            setData(restaurants);
+            setFilteredResturant(restaurants);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
     };
     console.log("Body Called!");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -25116,7 +25124,7 @@ const Body = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/component/Body.js",
-                                lineNumber: 37,
+                                lineNumber: 44,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -25129,32 +25137,31 @@ const Body = ()=>{
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "src/component/Body.js",
-                                lineNumber: 45,
+                                lineNumber: 52,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 36,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "short-btn",
                         onClick: ()=>{
-                            const filteredList = filteredResturant.filter((res)=>res.info.avgRating > 4.3);
+                            const filteredList = data.filter((res)=>res.info.avgRating > 4.3);
                             setFilteredResturant(filteredList);
-                            console.log("Sorting the Restaurant");
                         },
                         children: "Sort the Restaurant"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 60,
+                        lineNumber: 67,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 35,
+                lineNumber: 42,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -25163,18 +25170,18 @@ const Body = ()=>{
                         resData: restaurant
                     }, restaurant.info.id, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 75,
+                        lineNumber: 79,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 73,
+                lineNumber: 77,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Body.js",
-        lineNumber: 34,
+        lineNumber: 41,
         columnNumber: 5
     }, undefined);
 };

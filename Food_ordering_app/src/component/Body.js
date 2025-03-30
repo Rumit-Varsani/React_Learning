@@ -9,24 +9,31 @@ const Body = () => {
     console.log("useEffect called!");
     fetchData();
   }, []);
-
   const fetchData = async () => {
-    const response = await fetch(
-      "https://mocki.io/v1/ca91595a-a813-4237-85cb-ca29d32c7ddb"
-    );
-    const jsondata = await response.json();
-
-    console.log("Full API Response:", jsondata); // Log the entire response
-
-    // Extract restaurant data
-    const restaurants =
-      jsondata?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-
-    console.log("Extracted Restaurants:", restaurants);
-    setData(restaurants);
-    setFilteredResturant(restaurants);
+    try {
+      const response = await fetch(
+        "https://mocki.io/v1/6861b5ad-c174-481b-aff8-17c053006c8a"
+      );
+      const jsondata = await response.json();
+  
+      console.log("Full API Response:", jsondata); // Debugging
+  
+      // Extract restaurant data correctly
+      const restaurants = jsondata?.infoWithStyle?.restaurants || [];
+  
+      if (!Array.isArray(restaurants)) {
+        console.error("Invalid restaurant data:", restaurants);
+        return;
+      }
+  
+      console.log("Extracted Restaurants:", restaurants);
+      setData(restaurants);
+      setFilteredResturant(restaurants);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
+  
 
   console.log("Body Called!");
 
@@ -60,11 +67,8 @@ const Body = () => {
         <button
           className="short-btn"
           onClick={() => {
-            const filteredList = filteredResturant.filter(
-              (res) => res.info.avgRating > 4.3
-            );
+            const filteredList = data.filter((res) => res.info.avgRating > 4.3);
             setFilteredResturant(filteredList);
-            console.log("Sorting the Restaurant");
           }}
         >
           Sort the Restaurant
