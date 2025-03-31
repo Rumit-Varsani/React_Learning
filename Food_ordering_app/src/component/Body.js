@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ResturentCard from "./ResturentCard";
 import { useEffect, useState } from "react";
 
@@ -15,25 +16,23 @@ const Body = () => {
         "https://mocki.io/v1/6861b5ad-c174-481b-aff8-17c053006c8a"
       );
       const jsondata = await response.json();
-  
+
       console.log("Full API Response:", jsondata); // Debugging
-  
+
       // Extract restaurant data correctly
       const restaurants = jsondata?.infoWithStyle?.restaurants || [];
-  
+
       if (!Array.isArray(restaurants)) {
         console.error("Invalid restaurant data:", restaurants);
         return;
       }
-  
-      console.log("Extracted Restaurants:", restaurants);
+
       setData(restaurants);
       setFilteredResturant(restaurants);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
-  
 
   console.log("Body Called!");
 
@@ -76,7 +75,12 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredResturant.map((restaurant) => (
-          <ResturentCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restuarant/"+restaurant.info.id}
+          >
+            <ResturentCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
