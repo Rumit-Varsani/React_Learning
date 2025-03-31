@@ -25459,6 +25459,19 @@ class UserClass extends (0, _reactDefault.default).Component {
                     lineNumber: 17,
                     columnNumber: 17
                 }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: ()=>{
+                        this.setState({
+                            count: this.state.count + 1,
+                            count1: this.state.count1 + 2
+                        });
+                    },
+                    children: "Count Btn"
+                }, void 0, false, {
+                    fileName: "src/component/UserClass.js",
+                    lineNumber: 18,
+                    columnNumber: 17
+                }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     children: [
                         "Name:",
@@ -25467,14 +25480,14 @@ class UserClass extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/component/UserClass.js",
-                    lineNumber: 18,
+                    lineNumber: 24,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     children: "Address:Germany"
                 }, void 0, false, {
                     fileName: "src/component/UserClass.js",
-                    lineNumber: 19,
+                    lineNumber: 25,
                     columnNumber: 17
                 }, this)
             ]
