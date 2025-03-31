@@ -25357,10 +25357,35 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
 const User = ({ Name })=>{
+    _s();
+    const [count] = (0, _react.useState)(0);
+    const [count2] = (0, _react.useState)(1);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "user-card",
         children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: [
+                    "Count=",
+                    count
+                ]
+            }, void 0, true, {
+                fileName: "src/component/User.js",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: [
+                    "Count2=",
+                    count2
+                ]
+            }, void 0, true, {
+                fileName: "src/component/User.js",
+                lineNumber: 9,
+                columnNumber: 13
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: [
                     "Name:",
@@ -25368,23 +25393,24 @@ const User = ({ Name })=>{
                 ]
             }, void 0, true, {
                 fileName: "src/component/User.js",
-                lineNumber: 4,
+                lineNumber: 10,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: "Address:Berlin,Germany"
             }, void 0, false, {
                 fileName: "src/component/User.js",
-                lineNumber: 5,
+                lineNumber: 11,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/User.js",
-        lineNumber: 3,
+        lineNumber: 7,
         columnNumber: 9
     }, undefined);
 };
+_s(User, "KnnGOB6vdIiTK5vwFjX+OQrh5z8=");
 _c = User;
 exports.default = User;
 var _c;
@@ -25395,7 +25421,7 @@ $RefreshReg$(_c, "User");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"3oUvh":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U"}],"3oUvh":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$8954 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$8954.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -25411,11 +25437,28 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 class UserClass extends (0, _reactDefault.default).Component {
     constructor(prop){
         super(prop);
+        this.state = {
+            count: 1,
+            count1: 2
+        };
     }
     render() {
+        const { count, count1 } = this.state;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "user-card",
             children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: [
+                        "Counts = ",
+                        count,
+                        "-",
+                        count1
+                    ]
+                }, void 0, true, {
+                    fileName: "src/component/UserClass.js",
+                    lineNumber: 17,
+                    columnNumber: 17
+                }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     children: [
                         "Name:",
@@ -25424,20 +25467,20 @@ class UserClass extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/component/UserClass.js",
-                    lineNumber: 10,
+                    lineNumber: 18,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     children: "Address:Germany"
                 }, void 0, false, {
                     fileName: "src/component/UserClass.js",
-                    lineNumber: 11,
+                    lineNumber: 19,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/component/UserClass.js",
-            lineNumber: 9,
+            lineNumber: 16,
             columnNumber: 13
         }, this);
     }
