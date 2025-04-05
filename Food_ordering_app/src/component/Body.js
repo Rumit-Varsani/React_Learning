@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ResturentCard from "./ResturentCard";
 import { useEffect, useState } from "react";
+import useOnlineStatus from "../Utils/useOnlineStatus";
 
 const Body = () => {
   const [filteredResturant, setFilteredResturant] = useState([]);
@@ -33,7 +34,11 @@ const Body = () => {
       console.error("Error fetching data:", error);
     }
   };
-
+  const onlineStatus= useOnlineStatus();
+  if(onlineStatus===false)
+  {
+    return <h1>Looks like you are offline! Please check your internet connection</h1>
+  }
   console.log("Body Called!");
 
   return (
