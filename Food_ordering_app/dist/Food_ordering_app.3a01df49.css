@@ -64,4 +64,42 @@
   margin: 10px;
   padding: 10px;
 }
+
+.shimmer {
+  padding: 20px;
+}
+
+.shimmer-header, .shimmer-subheader {
+  background: #ccc;
+  height: 20px;
+  margin-bottom: 10px;
+  animation: 1.5s infinite shimmer;
+}
+
+.shimmer-header {
+  width: 200px;
+  height: 30px;
+}
+
+.shimmer-subheader {
+  width: 150px;
+}
+
+.shimmer-item {
+  background: #ddd;
+  border-radius: 4px;
+  height: 20px;
+  margin: 10px 0;
+  animation: 1.5s infinite shimmer;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+
+  100% {
+    background-position: 400px 0;
+  }
+}
 /*# sourceMappingURL=Food_ordering_app.3a01df49.css.map */

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemsMenus } from "../Utils/contants";
-
+import Shimmer from "./Shimmer";
 const Resturantmenu = () => {
   const [menuData, setmenuData] = useState([]);
   const {restaurantId} = useParams();
@@ -17,9 +17,10 @@ const Resturantmenu = () => {
     console.log(jsonData);
     setmenuData(jsonData);
   };
-  if (!menuData?.data) {
-    return <h1>Loading...</h1>;
-  }
+ // Show shimmer while loading
+ if (!menuData?.data) {
+  return <Shimmer/>;
+}
 
   const {
     name,
