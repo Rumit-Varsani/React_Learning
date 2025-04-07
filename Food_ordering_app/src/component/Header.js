@@ -6,12 +6,12 @@ const Header = () => {
   const [loginNameReact, setLoginNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="Header">
+    <div className="flex">
       <div className="logo-container">
         <img className="logo" src={LOGO_URL} alt="c-logo" />
       </div>
       <div className="nav-item">
-        <ul>
+        <ul className="flex"> 
           <li>Online Status : {onlineStatus? "Green" : "Red"}</li>
           <li>
             <Link to={"/"}>Home</Link>

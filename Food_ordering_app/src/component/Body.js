@@ -1,40 +1,14 @@
 import { Link } from "react-router-dom";
 import ResturentCard from "./ResturentCard";
-import { useEffect, useState } from "react";
+import useRestroCard from "../Utils/useRestroCard";
 import useOnlineStatus from "../Utils/useOnlineStatus";
+import { useState } from "react";
 
 const Body = () => {
-  const [filteredResturant, setFilteredResturant] = useState([]);
-  const [data, setData] = useState([]);
-  const [searchText, setsearchText] = useState("");
-  useEffect(() => {
-    console.log("useEffect called!");
-    fetchData();
-  }, []);
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        "https://mocki.io/v1/6861b5ad-c174-481b-aff8-17c053006c8a"
-      );
-      const jsondata = await response.json();
+  const { data, filteredResturant, setFilteredResturant } = useRestroCard();
 
-      console.log("Full API Response:", jsondata); // Debugging
-
-      // Extract restaurant data correctly
-      const restaurants = jsondata?.infoWithStyle?.restaurants || [];
-
-      if (!Array.isArray(restaurants)) {
-        console.error("Invalid restaurant data:", restaurants);
-        return;
-      }
-
-      setData(restaurants);
-      setFilteredResturant(restaurants);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
   const onlineStatus= useOnlineStatus();
+  const [searchText, setSearchText] = useState("");
   if(onlineStatus===false)
   {
     return <h1>Looks like you are offline! Please check your internet connection</h1>
@@ -50,7 +24,7 @@ const Body = () => {
             className="search-box"
             value={searchText}
             onChange={(e) => {
-              setsearchText(e.target.value);
+              setSearchText(e.target.value);
             }}
           />
           <button

@@ -16380,7 +16380,7 @@ const Header = ()=>{
     const [loginNameReact, setLoginNameReact] = (0, _react.useState)("Login");
     const onlineStatus = (0, _useOnlineStatusJsDefault.default)();
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "Header",
+        className: "flex",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "logo-container",
@@ -16401,6 +16401,7 @@ const Header = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "nav-item",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    className: "flex",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: [
@@ -25106,7 +25107,7 @@ var _react = require("react");
 var _s = $RefreshSig$();
 const useOnlineStatus = ()=>{
     _s();
-    const [OnlineStatus, setOnlineStatus] = (0, _react.useState)();
+    const [OnlineStatus, setOnlineStatus] = (0, _react.useState)(true);
     (0, _react.useEffect)(()=>{
         window.addEventListener("offline", ()=>{
             setOnlineStatus(false);
@@ -25117,7 +25118,7 @@ const useOnlineStatus = ()=>{
     }, []);
     return OnlineStatus;
 };
-_s(useOnlineStatus, "mUYBzitEA926jRoelsNK26goFio=");
+_s(useOnlineStatus, "JG9hg1lRnMC9sGK/Ec6W2Q0y8VA=");
 exports.default = useOnlineStatus;
 
   $parcel$ReactRefreshHelpers$b942.postlude(module);
@@ -25139,42 +25140,22 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactRouterDom = require("react-router-dom");
 var _resturentCard = require("./ResturentCard");
 var _resturentCardDefault = parcelHelpers.interopDefault(_resturentCard);
-var _react = require("react");
+var _useRestroCard = require("../Utils/useRestroCard");
+var _useRestroCardDefault = parcelHelpers.interopDefault(_useRestroCard);
 var _useOnlineStatus = require("../Utils/useOnlineStatus");
 var _useOnlineStatusDefault = parcelHelpers.interopDefault(_useOnlineStatus);
+var _react = require("react");
 var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
-    const [filteredResturant, setFilteredResturant] = (0, _react.useState)([]);
-    const [data, setData] = (0, _react.useState)([]);
-    const [searchText, setsearchText] = (0, _react.useState)("");
-    (0, _react.useEffect)(()=>{
-        console.log("useEffect called!");
-        fetchData();
-    }, []);
-    const fetchData = async ()=>{
-        try {
-            const response = await fetch("https://mocki.io/v1/6861b5ad-c174-481b-aff8-17c053006c8a");
-            const jsondata = await response.json();
-            console.log("Full API Response:", jsondata); // Debugging
-            // Extract restaurant data correctly
-            const restaurants = jsondata?.infoWithStyle?.restaurants || [];
-            if (!Array.isArray(restaurants)) {
-                console.error("Invalid restaurant data:", restaurants);
-                return;
-            }
-            setData(restaurants);
-            setFilteredResturant(restaurants);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    };
+    const { data, filteredResturant, setFilteredResturant } = (0, _useRestroCardDefault.default)();
     const onlineStatus = (0, _useOnlineStatusDefault.default)();
+    const [searchText, setSearchText] = (0, _react.useState)("");
     if (onlineStatus === false) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
         children: "Looks like you are offline! Please check your internet connection"
     }, void 0, false, {
         fileName: "src/component/Body.js",
-        lineNumber: 40,
+        lineNumber: 14,
         columnNumber: 12
     }, undefined);
     console.log("Body Called!");
@@ -25192,11 +25173,11 @@ const Body = ()=>{
                                 className: "search-box",
                                 value: searchText,
                                 onChange: (e)=>{
-                                    setsearchText(e.target.value);
+                                    setSearchText(e.target.value);
                                 }
                             }, void 0, false, {
                                 fileName: "src/component/Body.js",
-                                lineNumber: 48,
+                                lineNumber: 22,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -25209,13 +25190,13 @@ const Body = ()=>{
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "src/component/Body.js",
-                                lineNumber: 56,
+                                lineNumber: 30,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 47,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -25227,13 +25208,13 @@ const Body = ()=>{
                         children: "Sort the Restaurant"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 71,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 46,
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -25244,28 +25225,29 @@ const Body = ()=>{
                             resData: restaurant
                         }, void 0, false, {
                             fileName: "src/component/Body.js",
-                            lineNumber: 87,
+                            lineNumber: 61,
                             columnNumber: 13
                         }, undefined)
                     }, restaurant.info.id, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 83,
+                        lineNumber: 57,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 81,
+                lineNumber: 55,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Body.js",
-        lineNumber: 45,
+        lineNumber: 19,
         columnNumber: 5
     }, undefined);
 };
-_s(Body, "qYomKAPBXVz224ZI3FKYx7Oc754=", false, function() {
+_s(Body, "928Q7bEnetFammJcjawhpqZ9e4U=", false, function() {
     return [
+        (0, _useRestroCardDefault.default),
         (0, _useOnlineStatusDefault.default)
     ];
 });
@@ -25279,7 +25261,7 @@ $RefreshReg$(_c, "Body");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","./ResturentCard":"iq9Uv","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-router-dom":"61z4w","../Utils/useOnlineStatus":"4weZe"}],"iq9Uv":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","./ResturentCard":"iq9Uv","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-router-dom":"61z4w","../Utils/useOnlineStatus":"4weZe","../Utils/useRestroCard":"fk5Uu","react":"jMk1U"}],"iq9Uv":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$c963 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$c963.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -25347,7 +25329,57 @@ $RefreshReg$(_c, "ResturentCard");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","../Utils/contants.js":"h8GNX","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"bJdnO":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","../Utils/contants.js":"h8GNX","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"fk5Uu":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$f448 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$f448.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f448.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useRestroCard = ()=>{
+    _s();
+    const [filteredResturant, setFilteredResturant] = (0, _react.useState)([]);
+    const [data, setData] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        console.log("useEffect called!");
+        fetchData();
+    }, []);
+    const fetchData = async ()=>{
+        try {
+            const response = await fetch("https://mocki.io/v1/6861b5ad-c174-481b-aff8-17c053006c8a");
+            const jsondata = await response.json();
+            console.log("Full API Response:", jsondata); // Debugging
+            const restaurants = jsondata?.infoWithStyle?.restaurants || [];
+            if (!Array.isArray(restaurants)) {
+                console.error("Invalid restaurant data:", restaurants);
+                return;
+            }
+            setData(restaurants);
+            setFilteredResturant(restaurants);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
+    return {
+        data,
+        filteredResturant,
+        setFilteredResturant
+    };
+};
+_s(useRestroCard, "ADFzdkWLk4LaVdH0IDx759Dpc/Q=");
+exports.default = useRestroCard;
+
+  $parcel$ReactRefreshHelpers$f448.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"bJdnO":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$69b1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$69b1.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
