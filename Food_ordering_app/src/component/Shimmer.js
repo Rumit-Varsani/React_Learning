@@ -1,19 +1,14 @@
-// components/Shimmer.js
 const Shimmer = () => {
-    return (
-      <div className="shimmer">
-        <div className="shimmer-header"></div>
-        <div className="shimmer-subheader"></div>
-        <div className="shimmer-menu">
-          {Array(5)
-            .fill("")
-            .map((_, index) => (
-              <div className="shimmer-item" key={index}></div>
-            ))}
-        </div>
+  return (
+    <div className="w-full h-full flex justify-center items-center">
+      <div className="w-80 h-48 bg-gray-200 animate-pulse rounded-lg">
+        <div className="w-full h-3 bg-gray-300 rounded-md mb-2"></div>
+        <div className="w-2/3 h-3 bg-gray-300 rounded-md mb-4"></div>
+        <div className="w-full h-4 bg-gray-300 rounded-md mb-2"></div>
+        <div className="w-full h-4 bg-gray-300 rounded-md"></div>
       </div>
-    );
-  };
-  
-  export default Shimmer;
-  
+    </div>
+  );
+};
+
+export default Shimmer;
