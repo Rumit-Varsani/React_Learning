@@ -41,30 +41,37 @@ const Resturantmenu = () => {
       ?.card || [];
 
   return (
-    <div className="bg-gray-200 w-[100vw] h-[100vh] flex  justify-center flex-col">
-      <div className="flex w-[50%] h-[30%] m-20 bg-white items-center justify-center flex-col rounded-2xl shadow-2xl">
-        <h1 className="font-bold mb-5 text-3xl">{name}</h1>
-        <h2 className="font-bold">
-          <span className="material-symbols-outlined align-middle">
+    <div className="bg-gray-200 min-h-screen w-full flex flex-col items-center justify-start py-10">
+      {/* Restaurant Info Card */}
+      <div className="w-[90%] md:w-[50%] bg-white rounded-2xl shadow-2xl p-6 mb-10 text-center">
+        <h1 className="font-bold text-3xl mb-3">{name}</h1>
+        <h2 className="font-bold flex items-center justify-center text-lg mb-2">
+          <span className="material-symbols-outlined align-middle mr-1">
             star_rate
-          </span>{" "}
+          </span>
           {avgRatingString +
             " (" +
             totalRatingsString +
             ") - " +
             costForTwoMessage}
         </h2>
-        <h3 className="pr-45 font-bold">{cuisines.join(", ")}</h3>
-        <h3 className="pr-33 font-bold">Outlet {areaName}</h3>
-        {/* <h3>{slaString}</h3> */}
+        <h3 className="font-semibold text-gray-600">{cuisines.join(", ")}</h3>
+        <h3 className="font-semibold text-gray-600 mt-1">Outlet: {areaName}</h3>
       </div>
-      <div className="">
-        <h2>Menu</h2>
-        <ul>
+
+      {/* Menu Section */}
+      <div className="w-[90%] md:w-[50%]">
+        <h2 className="font-extrabold text-3xl mb-6 text-center">Menu</h2>
+        <ul className="space-y-4">
           {itemCards?.map((item) => (
-            <li key={item.card.info.id}>
-              {item.card.info.name} - {"Rs"}{" "}
-              {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
+            <li
+              key={item.card.info.id}
+              className="bg-white shadow-md rounded-xl p-4 border border-gray-200 hover:shadow-lg transition duration-200"
+            >
+              <div className="font-semibold text-lg">{item.card.info.name}</div>
+              <div className="text-gray-600">
+                ₹ {(item.card.info.price ?? item.card.info.defaultPrice) / 100}
+              </div>
             </li>
           ))}
         </ul>
