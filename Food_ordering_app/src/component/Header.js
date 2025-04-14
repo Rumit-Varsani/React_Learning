@@ -7,47 +7,67 @@ const Header = () => {
   const [loginNameReact, setLoginNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="flex shadow h-25  ">
+    <div className="flex justify-between items-center px-6 py-3 shadow-md bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      {/* Logo */}
       <div>
-        <img className="h-25 w-25" src={LOGO_URL} alt="c-logo" />
+        <img className="h-16 w-16 rounded-full" src={LOGO_URL} alt="c-logo" />
       </div>
-      <div className="flex w-[100%] justify-center items-center ">
-        <ul className="flex w-[50%] justify-around ">
-          <li>
-            Online Status : {onlineStatus ?(
-              <span className="material-symbols-outlined align-middle">
-              cell_tower
+
+      {/* Navigation */}
+      <div className="flex-1 flex justify-center items-center">
+        <ul className="flex gap-6 text-lg font-medium">
+          <li className="flex items-center gap-1">
+            Online Status:{" "}
+            {onlineStatus ? (
+              <span className="material-symbols-outlined text-green-300">
+                cell_tower
               </span>
             ) : (
-              <span className="material-symbols-outlined  align-middle">
-              signal_disconnected
+              <span className="material-symbols-outlined text-red-300">
+                signal_disconnected
               </span>
             )}
           </li>
           <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link to={"/about"}>About Us</Link>
-          </li>
-          <li>
-            {" "}
-            <Link to={"/contact"}>Contact Us</Link>{" "}
-          </li>
-          <li>Cart</li>
-          <li>
-            <button
-              className="login"
-              onClick={() => {
-                loginNameReact === "Login"
-                  ? setLoginNameReact("Logout")
-                  : setLoginNameReact("Login");
-              }}
+            <Link
+              className="hover:text-yellow-300 transition duration-200"
+              to={"/"}
             >
-              {loginNameReact}
-            </button>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-yellow-300 transition duration-200"
+              to={"/about"}
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-yellow-300 transition duration-200"
+              to={"/contact"}
+            >
+              Contact Us
+            </Link>
+          </li>
+          <li className="hover:text-yellow-300 transition duration-200">
+            Cart
           </li>
         </ul>
+      </div>
+
+      {/* Login Button */}
+      <div>
+        <button
+          className="w-[80px] border border-white px-4 py-1 rounded-md hover:bg-white hover:text-indigo-700 transition duration-200 text-center"
+          onClick={() =>
+            setLoginNameReact(loginNameReact === "Login" ? "Logout" : "Login")
+          }
+        >
+          {loginNameReact}
+        </button>
       </div>
     </div>
   );
