@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import ResturentCard from "./ResturentCard";
+import ResturentCard, {withPromotedLabel} from "./ResturentCard";
 import useRestroCard from "../Utils/useRestroCard";
 import useOnlineStatus from "../Utils/useOnlineStatus";
 import { useState } from "react";
 
 const Body = () => {
   const { data, filteredResturant, setFilteredResturant } = useRestroCard();
-
+  const ResturentCardPromoted = withPromotedLabel(ResturentCard);
   const onlineStatus = useOnlineStatus();
   const [searchText, setSearchText] = useState("");
   if (onlineStatus === false) {
@@ -16,7 +16,7 @@ const Body = () => {
       </h1>
     );
   }
-  console.log("Body Called!");
+  console.log("Body Called!",data);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white px-6 py-10">
@@ -61,7 +61,10 @@ const Body = () => {
             to={"/restuarant/" + restaurant.info.id}
             className="block"
           >
-            <ResturentCard resData={restaurant} />
+            {
+              restaurant.info.promoted ? <ResturentCardPromoted resData={restaurant}/> : <ResturentCard resData={restaurant} />
+            }
+            
           </Link>
         ))}
       </div>

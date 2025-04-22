@@ -12,26 +12,34 @@ const useRestroCard = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://mocki.io/v1/6861b5ad-c174-481b-aff8-17c053006c8a"
+        "https://mocki.io/v1/f12dab67-eea5-4a41-ba7b-c6d1a76c0e16"
       );
+  
       const jsondata = await response.json();
-
-      console.log("Full API Response:", jsondata); // Debugging
-
-      const restaurants = jsondata?.infoWithStyle?.restaurants || [];
-
-      if (!Array.isArray(restaurants)) {
-        console.error("Invalid restaurant data:", restaurants);
-        return;
+      console.log("Full JSON Response:", jsondata);
+  
+      const cards = jsondata?.data?.cards || [];
+  
+      let restaurants = [];
+  
+      for (const card of cards) {
+        const restList =
+          card?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        if (restList) {
+          restaurants = restList;
+          break;
+        }
       }
-
+  
       setData(restaurants);
       setFilteredResturant(restaurants);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
-
+  
+  
+  
   return {
     data,
     filteredResturant,

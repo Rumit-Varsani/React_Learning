@@ -40,6 +40,9 @@ const Resturantmenu = () => {
     resinfo?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card || [];
 
+  const category =
+    resinfo?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c=>c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    console.log("1ITEMS DATA",category);
   return (
     <div className="bg-indigo-50 min-h-screen w-full flex flex-col items-center justify-start py-10">
       {/* Restaurant Info Card */}

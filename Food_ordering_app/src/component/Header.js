@@ -19,7 +19,7 @@ const Header = () => {
           <li className="flex items-center gap-1">
             Online Status:{" "}
             {onlineStatus ? (
-              <span className="material-symbols-outlined text-green-300">
+              <span className="material-symbols-outlined text-green-300 text-2xl">
                 cell_tower
               </span>
             ) : (
