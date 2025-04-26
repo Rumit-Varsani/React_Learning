@@ -25171,7 +25171,6 @@ const Body = ()=>{
         lineNumber: 14,
         columnNumber: 7
     }, undefined);
-    console.log("Body Called!", data);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "min-h-screen bg-gradient-to-b from-indigo-50 to-white px-6 py-10",
         children: [
@@ -25410,14 +25409,12 @@ const useRestroCard = ()=>{
     const [filteredResturant, setFilteredResturant] = (0, _react.useState)([]);
     const [data, setData] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
-        console.log("useEffect called!");
         fetchData();
     }, []);
     const fetchData = async ()=>{
         try {
             const response = await fetch("https://mocki.io/v1/f12dab67-eea5-4a41-ba7b-c6d1a76c0e16");
             const jsondata = await response.json();
-            console.log("Full JSON Response:", jsondata);
             const cards = jsondata?.data?.cards || [];
             let restaurants = [];
             for (const card of cards){
@@ -25725,40 +25722,32 @@ var _s = $RefreshSig$();
 const Resturantmenu = ()=>{
     _s();
     const { restaurantId } = (0, _reactRouterDom.useParams)();
-    console.log("Restaurant ID from params:", restaurantId); // Log the restaurant ID
     const { resinfo, loading } = (0, _useResturantMenuDefault.default)(restaurantId);
-    console.log("Menu Data:", resinfo); // Log menu data
-    console.log("Loading state:", loading); // Log loading state
-    if (loading) {
-        console.log("Loading... Rendering Shimmer");
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "flex justify-center items-center min-h-screen",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
-                fileName: "src/component/Resturantmenu.js",
-                lineNumber: 18,
-                columnNumber: 9
-            }, undefined)
-        }, void 0, false, {
+    // Log loading state
+    if (loading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex justify-center items-center min-h-screen",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
             fileName: "src/component/Resturantmenu.js",
             lineNumber: 17,
-            columnNumber: 7
-        }, undefined);
-    }
-    if (!resinfo) {
-        console.log("No menu data received yet.");
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: "Error loading restaurant data"
-        }, void 0, false, {
-            fileName: "src/component/Resturantmenu.js",
-            lineNumber: 25,
-            columnNumber: 12
-        }, undefined);
-    }
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/component/Resturantmenu.js",
+        lineNumber: 16,
+        columnNumber: 7
+    }, undefined);
+    if (!resinfo) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Error loading restaurant data"
+    }, void 0, false, {
+        fileName: "src/component/Resturantmenu.js",
+        lineNumber: 24,
+        columnNumber: 12
+    }, undefined);
     const { name, avgRatingString, totalRatingsString, costForTwoMessage, cuisines, areaName } = resinfo?.data?.cards[2]?.card?.card?.info || [];
-    const { slaString } = resinfo?.data?.cards[2]?.card?.card?.info.sla || [];
+    // const { slaString } = resinfo?.data?.cards[2]?.card?.card?.info.sla || [];
     const { itemCards } = resinfo?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card || [];
     const category = resinfo?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    console.log("1ITEMS DATA", category);
+    console.log("category", category);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "bg-indigo-50 min-h-screen w-full flex flex-col items-center justify-start py-10",
         children: [
@@ -25770,7 +25759,7 @@ const Resturantmenu = ()=>{
                         children: name
                     }, void 0, false, {
                         fileName: "src/component/Resturantmenu.js",
-                        lineNumber: 50,
+                        lineNumber: 49,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -25781,14 +25770,14 @@ const Resturantmenu = ()=>{
                                 children: "star_rate"
                             }, void 0, false, {
                                 fileName: "src/component/Resturantmenu.js",
-                                lineNumber: 52,
+                                lineNumber: 51,
                                 columnNumber: 11
                             }, undefined),
                             avgRatingString + " (" + totalRatingsString + ") - " + costForTwoMessage
                         ]
                     }, void 0, true, {
                         fileName: "src/component/Resturantmenu.js",
-                        lineNumber: 51,
+                        lineNumber: 50,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -25796,7 +25785,7 @@ const Resturantmenu = ()=>{
                         children: cuisines.join(", ")
                     }, void 0, false, {
                         fileName: "src/component/Resturantmenu.js",
-                        lineNumber: 61,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -25807,13 +25796,13 @@ const Resturantmenu = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/component/Resturantmenu.js",
-                        lineNumber: 62,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Resturantmenu.js",
-                lineNumber: 49,
+                lineNumber: 48,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -25824,7 +25813,7 @@ const Resturantmenu = ()=>{
                         children: "Menu"
                     }, void 0, false, {
                         fileName: "src/component/Resturantmenu.js",
-                        lineNumber: 67,
+                        lineNumber: 66,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
@@ -25837,7 +25826,7 @@ const Resturantmenu = ()=>{
                                         children: item.card.info.name
                                     }, void 0, false, {
                                         fileName: "src/component/Resturantmenu.js",
-                                        lineNumber: 76,
+                                        lineNumber: 75,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -25848,30 +25837,30 @@ const Resturantmenu = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/component/Resturantmenu.js",
-                                        lineNumber: 79,
+                                        lineNumber: 78,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, item.card.info.id, true, {
                                 fileName: "src/component/Resturantmenu.js",
-                                lineNumber: 72,
+                                lineNumber: 71,
                                 columnNumber: 13
                             }, undefined))
                     }, void 0, false, {
                         fileName: "src/component/Resturantmenu.js",
-                        lineNumber: 70,
+                        lineNumber: 69,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Resturantmenu.js",
-                lineNumber: 66,
+                lineNumber: 65,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Resturantmenu.js",
-        lineNumber: 47,
+        lineNumber: 46,
         columnNumber: 5
     }, undefined);
 };

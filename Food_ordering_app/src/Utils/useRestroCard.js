@@ -5,7 +5,7 @@ const useRestroCard = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log("useEffect called!");
+    
     fetchData();
   }, []);
 
@@ -16,8 +16,7 @@ const useRestroCard = () => {
       );
   
       const jsondata = await response.json();
-      console.log("Full JSON Response:", jsondata);
-  
+     
       const cards = jsondata?.data?.cards || [];
   
       let restaurants = [];

@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const Body = () => {
   const { data, filteredResturant, setFilteredResturant } = useRestroCard();
-  const ResturentCardPromoted = withPromotedLabel(ResturentCard);
+  const ResturentCardPromoted = withPromotedLabel (ResturentCard);
   const onlineStatus = useOnlineStatus();
   const [searchText, setSearchText] = useState("");
   if (onlineStatus === false) {
@@ -16,7 +16,7 @@ const Body = () => {
       </h1>
     );
   }
-  console.log("Body Called!",data);
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white px-6 py-10">

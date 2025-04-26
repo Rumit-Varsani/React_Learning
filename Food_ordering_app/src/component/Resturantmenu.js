@@ -4,15 +4,14 @@ import useResturantMenu from "../Utils/useResturantMenu";
 
 const Resturantmenu = () => {
   const { restaurantId } = useParams();
-  console.log("Restaurant ID from params:", restaurantId); // Log the restaurant ID
+ 
 
   const { resinfo, loading } = useResturantMenu(restaurantId);
 
-  console.log("Menu Data:", resinfo); // Log menu data
-  console.log("Loading state:", loading); // Log loading state
+   // Log loading state
 
   if (loading) {
-    console.log("Loading... Rendering Shimmer");
+   
     return (
       <div className="flex justify-center items-center min-h-screen">
         <Shimmer />
@@ -21,7 +20,7 @@ const Resturantmenu = () => {
   }
 
   if (!resinfo) {
-    console.log("No menu data received yet.");
+   
     return <div>Error loading restaurant data</div>;
   }
 
@@ -34,7 +33,7 @@ const Resturantmenu = () => {
     areaName,
   } = resinfo?.data?.cards[2]?.card?.card?.info || [];
 
-  const { slaString } = resinfo?.data?.cards[2]?.card?.card?.info.sla || [];
+  // const { slaString } = resinfo?.data?.cards[2]?.card?.card?.info.sla || [];
 
   const { itemCards } =
     resinfo?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
@@ -42,7 +41,7 @@ const Resturantmenu = () => {
 
   const category =
     resinfo?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c=>c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    console.log("1ITEMS DATA",category);
+    console.log("category",category);
   return (
     <div className="bg-indigo-50 min-h-screen w-full flex flex-col items-center justify-start py-10">
       {/* Restaurant Info Card */}
