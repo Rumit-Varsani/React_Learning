@@ -1,17 +1,17 @@
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useResturantMenu from "../Utils/useResturantMenu";
+import Restaurantcategory from "./Restaurantcategory";
+import { useState } from "react";
 
 const Resturantmenu = () => {
   const { restaurantId } = useParams();
- 
-
+  const [showIndex,setShowIndex] = useState(null);
   const { resinfo, loading } = useResturantMenu(restaurantId);
 
-   // Log loading state
+  // Log loading state
 
   if (loading) {
-   
     return (
       <div className="flex justify-center items-center min-h-screen">
         <Shimmer />
@@ -20,7 +20,6 @@ const Resturantmenu = () => {
   }
 
   if (!resinfo) {
-   
     return <div>Error loading restaurant data</div>;
   }
 
@@ -39,9 +38,13 @@ const Resturantmenu = () => {
     resinfo?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card || [];
 
-  const category =
-    resinfo?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c=>c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    console.log("category",category);
+  const categories =
+    resinfo?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  // console.log("category", categories);
   return (
     <div className="bg-indigo-50 min-h-screen w-full flex flex-col items-center justify-start py-10">
       {/* Restaurant Info Card */}
@@ -66,21 +69,18 @@ const Resturantmenu = () => {
         <h2 className="font-extrabold text-3xl mb-6 text-center text-indigo-600">
           Menu
         </h2>
-        <ul className="space-y-4">
-          {itemCards?.map((item) => (
-            <li
-              key={item.card.info.id}
-              className="bg-white shadow-md rounded-xl p-4 border border-indigo-100 hover:shadow-lg transition duration-200"
-            >
-              <div className="font-semibold text-lg text-gray-800">
-                {item.card.info.name}
-              </div>
-              <div className="text-indigo-600 font-medium">
-                ₹ {(item.card.info.price ?? item.card.info.defaultPrice) / 100}
-              </div>
-            </li>
+
+        {/* NEW: Wrap all categories inside one div with space-y-4 */}
+        <div className="space-y-4 cursor-pointer">
+          {categories.map((category,index) => (
+            <Restaurantcategory
+              key={category?.card?.card?.title}
+              cdata={category?.card?.card}
+              showItems={index===showIndex ? true : false}
+              setShowIndex={()=>setShowIndex(index)}
+            />
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

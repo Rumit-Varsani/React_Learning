@@ -1,11 +1,14 @@
 import { LOGO_URL } from "../Utils/contants.js";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus.js";
+import UserContext from "../Utils/UserContext.js";
 
 const Header = () => {
   const [loginNameReact, setLoginNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const {loggedInUser} = useContext(UserContext);
+  console.log({loggedInUser});
   return (
     <div className="flex justify-between items-center px-6 py-3 shadow-md bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
       {/* Logo */}
@@ -54,6 +57,9 @@ const Header = () => {
           </li>
           <li className="hover:text-yellow-300 transition duration-200">
             Cart
+          </li>
+          <li className="hover:text-yellow-300 transition duration-200">
+            {loggedInUser}
           </li>
         </ul>
       </div>

@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { CDN_URL } from "../Utils/contants.js";
+import UserContext from "../Utils/UserContext.js";
 
 const ResturentCard = ({ resData }) => {
+  const {loggedInUser} = useContext(UserContext);
   return (
     <div className="bg-gradient-to-br from-white to-indigo-50 p-4 h-auto flex flex-col rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200">
       <img
@@ -21,6 +24,9 @@ const ResturentCard = ({ resData }) => {
       </h5>
       <h5 className="text-gray-600 text-sm">
         {resData.info.cuisines.join(", ")}
+      </h5>
+      <h5 className="text-gray-600 text-sm">
+        {loggedInUser}
       </h5>
     </div>
   );
