@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-import ResturentCard, {withPromotedLabel} from "./ResturentCard";
+import ResturentCard, { withPromotedLabel } from "./ResturentCard";
 import useRestroCard from "../Utils/useRestroCard";
 import useOnlineStatus from "../Utils/useOnlineStatus";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import UserContext from "../Utils/UserContext";
 
 const Body = () => {
   const { data, filteredResturant, setFilteredResturant } = useRestroCard();
-  const ResturentCardPromoted = withPromotedLabel (ResturentCard);
+  const ResturentCardPromoted = withPromotedLabel(ResturentCard);
   const onlineStatus = useOnlineStatus();
   const [searchText, setSearchText] = useState("");
   if (onlineStatus === false) {
@@ -16,8 +17,8 @@ const Body = () => {
       </h1>
     );
   }
-  
 
+  const { loggedInUser, setShowInfo } = useContext(UserContext);
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white px-6 py-10">
       {/* Search & Sort Section */}
@@ -42,6 +43,13 @@ const Body = () => {
             Search
           </button>
         </div>
+        <input
+          type="text"
+          className="border border-gray-300 h-10 w-64 px-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          placeholder="Search Username..."
+          value={loggedInUser}
+          onChange={(e) => setShowInfo(e.target.value)}
+        />
         <button
           className="mt-4 sm:mt-0 h-10 px-5 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 transition"
           onClick={() => {
@@ -61,10 +69,11 @@ const Body = () => {
             to={"/restuarant/" + restaurant.info.id}
             className="block"
           >
-            {
-              restaurant.info.promoted ? <ResturentCardPromoted resData={restaurant}/> : <ResturentCard resData={restaurant} />
-            }
-            
+            {restaurant.info.promoted ? (
+              <ResturentCardPromoted resData={restaurant} />
+            ) : (
+              <ResturentCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
