@@ -7,6 +7,9 @@ import About from "./src/component/About";
 import Contact from "./src/component/Contact";
 import Resturantmenu from "./src/component/Resturantmenu";
 import UserContext from "./src/Utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./src/Utils/appStore";
+import Cart from "./src/component/Cart";
 // Import the custom styles if you're using a separate CSS file.
 
 const AppLayout = () => {
@@ -18,12 +21,14 @@ const AppLayout = () => {
     setShowInfo(data.Name);
   }, []);
   return (
-    <UserContext.Provider value={{loggedInUser: showInfo,setShowInfo}}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: showInfo, setShowInfo }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -47,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/restuarant/:restaurantId",
         element: <Resturantmenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

@@ -1,6 +1,14 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../Utils/contants";
+import { addItems } from "../Utils/cartSlice";
 
 const ItemList = ({ items }) => {
+  const dispatch = useDispatch();
+  const handleAddItems = (item)=>{
+    dispatch(addItems(item));
+    
+  };
+  
   return (
     <div className="space-y-6 mt-6">
       {items.map((item) => {
@@ -33,7 +41,9 @@ const ItemList = ({ items }) => {
                   No Image
                 </div>
               )}
-              <button className="mt-4 py-2 px-42 bg-amber-400 text-white font-semibold rounded-md hover:bg-amber-500 transition">
+              <button className="py-1 bg-amber-400   rounded-md hover:bg-amber-500 transition"
+                onClick={()=>handleAddItems(item)}
+              >
                 <span className="material-symbols-outlined text-white">
                   add_shopping_cart
                 </span>
