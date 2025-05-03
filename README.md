@@ -15,3 +15,44 @@ npm install -D parcel
 
 # 5. Start the development server
 npx parcel index.html
+
+
+
+
+
+
+
+
+
+
+
+## 🧪 Setting up Testing in Our App
+
+```bash
+# 1. Install React Testing Library
+npm install @testing-library/react
+
+# 2. Install Jest
+npm install --save-dev jest
+
+# 3. Install Babel dependencies
+npm install --save-dev @babel/preset-env @babel/preset-react babel-jest
+
+# 4. Create a .babelrc file and add the following:
+echo '{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}' > .babelrc
+
+# 5. Create or update the .parcelrc file to disable default babel transpilation
+echo '{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.{js,jsx}": ["@parcel/transformer-babel"]
+  }
+}' > .parcelrc
+
+# 6. Initialize Jest configuration
+npx jest --init
+
+# 7. Install jsdom library
+npm install --save-dev jsdom
