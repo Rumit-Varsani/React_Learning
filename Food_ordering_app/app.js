@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./src/component/Header";
 import Body from "./src/component/Body";
 import About from "./src/component/About";
-import Contact from "./src/component/Contact";
+import Contact from "./src/component/contact";
 import Resturantmenu from "./src/component/Resturantmenu";
 import UserContext from "./src/Utils/UserContext";
 import { Provider } from "react-redux";

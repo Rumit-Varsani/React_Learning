@@ -12,7 +12,7 @@ const useRestroCard = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://mocki.io/v1/f12dab67-eea5-4a41-ba7b-c6d1a76c0e16"
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
   
       const jsondata = await response.json();
