@@ -816,7 +816,7 @@ $RefreshReg$(_c, "AppLayout");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","react-router-dom":"61z4w","./src/component/Header":"3FunF","./src/component/Body":"8675L","./src/component/About":"bJdnO","./src/component/Resturantmenu":"gqJ9y","./src/Utils/UserContext":"geuou","react-redux":"hbNxT","./src/Utils/appStore":"aXUhy","./src/component/Cart":"9GAu5","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","./src/component/contact":"if3f2"}],"dVPUn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","react-router-dom":"61z4w","./src/component/Header":"3FunF","./src/component/Body":"8675L","./src/component/About":"bJdnO","./src/component/contact":"if3f2","./src/component/Resturantmenu":"gqJ9y","./src/Utils/UserContext":"geuou","react-redux":"hbNxT","./src/Utils/appStore":"aXUhy","./src/component/Cart":"9GAu5","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
@@ -56009,7 +56009,82 @@ exports.default = UserClass;
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../Utils/UserContext":"geuou","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"gqJ9y":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../Utils/UserContext":"geuou","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"if3f2":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$2f0e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$2f0e.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2f0e.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Contact = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-3xl text-center p-2 m-2",
+                children: "Contact Us"
+            }, void 0, false, {
+                fileName: "src/component/contact.js",
+                lineNumber: 4,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                className: "text-center  ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        className: " border border-black p-2 m-2 items-center",
+                        type: "text",
+                        placeholder: "Enter the Name"
+                    }, void 0, false, {
+                        fileName: "src/component/contact.js",
+                        lineNumber: 6,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        className: " border border-black p-2 m-2",
+                        type: "text",
+                        placeholder: "Enter the Message"
+                    }, void 0, false, {
+                        fileName: "src/component/contact.js",
+                        lineNumber: 8,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        className: " p-2 m-2 bg-black rounded-xl text-white",
+                        type: "submit",
+                        placeholder: "Submit"
+                    }, void 0, false, {
+                        fileName: "src/component/contact.js",
+                        lineNumber: 10,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/component/contact.js",
+                lineNumber: 5,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/contact.js",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Contact;
+exports.default = Contact;
+var _c;
+$RefreshReg$(_c, "Contact");
+
+  $parcel$ReactRefreshHelpers$2f0e.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"gqJ9y":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$09c3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$09c3.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -60667,81 +60742,6 @@ $RefreshReg$(_c, "Cart");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react-redux":"hbNxT","./ItemList":"hbA99","../Utils/cartSlice":"f6dIL","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"if3f2":[function(require,module,exports,__globalThis) {
-var $parcel$ReactRefreshHelpers$2f0e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-$parcel$ReactRefreshHelpers$2f0e.init();
-var prevRefreshReg = globalThis.$RefreshReg$;
-var prevRefreshSig = globalThis.$RefreshSig$;
-$parcel$ReactRefreshHelpers$2f0e.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Contact = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "text-3xl text-center p-2 m-2",
-                children: "Contact Us"
-            }, void 0, false, {
-                fileName: "src/component/contact.js",
-                lineNumber: 4,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                className: "text-center  ",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        className: " border border-black p-2 m-2 items-center",
-                        type: "text",
-                        placeholder: "Enter the Name"
-                    }, void 0, false, {
-                        fileName: "src/component/contact.js",
-                        lineNumber: 6,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        className: " border border-black p-2 m-2",
-                        type: "text",
-                        placeholder: "Enter the Message"
-                    }, void 0, false, {
-                        fileName: "src/component/contact.js",
-                        lineNumber: 8,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        className: " p-2 m-2 bg-black rounded-xl text-white",
-                        type: "submit",
-                        placeholder: "Submit"
-                    }, void 0, false, {
-                        fileName: "src/component/contact.js",
-                        lineNumber: 10,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/component/contact.js",
-                lineNumber: 5,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/contact.js",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Contact;
-exports.default = Contact;
-var _c;
-$RefreshReg$(_c, "Contact");
-
-  $parcel$ReactRefreshHelpers$2f0e.postlude(module);
-} finally {
-  globalThis.$RefreshReg$ = prevRefreshReg;
-  globalThis.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["aj62f","4ZGjQ"], "4ZGjQ", "parcelRequired666", {}, null, null, "http://localhost:1234")
+},{"react/jsx-dev-runtime":"dVPUn","react-redux":"hbNxT","./ItemList":"hbA99","../Utils/cartSlice":"f6dIL","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["aj62f","4ZGjQ"], "4ZGjQ", "parcelRequired666", {}, null, null, "http://localhost:1234")
 
 //# sourceMappingURL=Food_ordering_app.f72d0d54.js.map
