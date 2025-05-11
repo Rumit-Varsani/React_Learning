@@ -10,7 +10,7 @@ import { useContext } from "react";
 const Header = () => {
   const [loginNameReact, setLoginNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
-  const { loggedInUser } = useContext(UserContext);
+  
   const cart = useSelector((store) => store.cart.items);
 
   return (
@@ -66,9 +66,9 @@ const Header = () => {
       <div className="flex items-center gap-4">
         {/* Cart Icon with Count */}
         <Link to="/cart" className="relative">
-          <FaShoppingCart className="text-white text-3xl" />
+          <FaShoppingCart data-testid="cart-icon" className="text-white text-3xl" />
           {cart.length > 0 && (
-            <span className="absolute top-0 right-0 text-xs font-bold bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center">
+            <span data-testid="cart-count" className="absolute top-0 right-0 text-xs font-bold bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center">
               {cart.length}
             </span>
           )}

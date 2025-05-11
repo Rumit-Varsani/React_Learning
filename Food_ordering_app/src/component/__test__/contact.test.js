@@ -13,6 +13,8 @@ test('Heading is first', () => {
     const heading = screen.getByRole("heading");
     expect(heading).toBeInTheDocument();
 
+  
+
 });
 
 test('Placeholder is the 2nd', () => {  
@@ -32,6 +34,9 @@ test('Button is rendered as the fourth element', () => {
     con();
     const btn = screen.getByRole("button");
     expect(btn).toBeInTheDocument();
+
+
+    
 });
 
 

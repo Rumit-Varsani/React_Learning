@@ -22529,7 +22529,6 @@ const Header = ()=>{
     _s();
     const [loginNameReact, setLoginNameReact] = (0, _react.useState)("Login");
     const onlineStatus = (0, _useOnlineStatusJsDefault.default)();
-    const { loggedInUser } = (0, _react.useContext)((0, _userContextJsDefault.default));
     const cart = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex justify-between items-center px-6 py-3 shadow-md bg-gradient-to-r from-indigo-600 to-purple-600 text-white",
@@ -22644,6 +22643,7 @@ const Header = ()=>{
                         className: "relative",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _fa.FaShoppingCart), {
+                                "data-testid": "cart-icon",
                                 className: "text-white text-3xl"
                             }, void 0, false, {
                                 fileName: "src/component/Header.js",
@@ -22651,6 +22651,7 @@ const Header = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             cart.length > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                "data-testid": "cart-count",
                                 className: "absolute top-0 right-0 text-xs font-bold bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center",
                                 children: cart.length
                             }, void 0, false, {
@@ -22686,7 +22687,7 @@ const Header = ()=>{
         columnNumber: 5
     }, undefined);
 };
-_s(Header, "tQV9dWOJyckWjeYcTEx7eLHBxrA=", false, function() {
+_s(Header, "Rjp9W/bUkTpGsnhP82Qejg6PxFA=", false, function() {
     return [
         (0, _useOnlineStatusJsDefault.default),
         (0, _reactRedux.useSelector)
@@ -55612,7 +55613,7 @@ const ResturentCard = ({ resData })=>{
                 alt: "restaurant"
             }, void 0, false, {
                 fileName: "src/component/ResturentCard.js",
-                lineNumber: 9,
+                lineNumber: 10,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -55620,7 +55621,7 @@ const ResturentCard = ({ resData })=>{
                 children: resData.info.name
             }, void 0, false, {
                 fileName: "src/component/ResturentCard.js",
-                lineNumber: 14,
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
@@ -55632,7 +55633,7 @@ const ResturentCard = ({ resData })=>{
                         children: "star_rate"
                     }, void 0, false, {
                         fileName: "src/component/ResturentCard.js",
-                        lineNumber: 19,
+                        lineNumber: 20,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -55640,14 +55641,14 @@ const ResturentCard = ({ resData })=>{
                         children: "\u2022"
                     }, void 0, false, {
                         fileName: "src/component/ResturentCard.js",
-                        lineNumber: 22,
+                        lineNumber: 23,
                         columnNumber: 9
                     }, undefined),
                     resData.info.sla.slaString
                 ]
             }, void 0, true, {
                 fileName: "src/component/ResturentCard.js",
-                lineNumber: 17,
+                lineNumber: 18,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
@@ -55655,7 +55656,7 @@ const ResturentCard = ({ resData })=>{
                 children: resData.info.cuisines.join(", ")
             }, void 0, false, {
                 fileName: "src/component/ResturentCard.js",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
@@ -55663,13 +55664,13 @@ const ResturentCard = ({ resData })=>{
                 children: loggedInUser
             }, void 0, false, {
                 fileName: "src/component/ResturentCard.js",
-                lineNumber: 28,
+                lineNumber: 29,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/ResturentCard.js",
-        lineNumber: 8,
+        lineNumber: 9,
         columnNumber: 5
     }, undefined);
 };
@@ -55685,20 +55686,20 @@ const withPromotedLabel = (ResturentCard)=>{
                     children: "Promoted"
                 }, void 0, false, {
                     fileName: "src/component/ResturentCard.js",
-                    lineNumber: 39,
+                    lineNumber: 40,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ResturentCard, {
                     ...props
                 }, void 0, false, {
                     fileName: "src/component/ResturentCard.js",
-                    lineNumber: 42,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/component/ResturentCard.js",
-            lineNumber: 38,
+            lineNumber: 39,
             columnNumber: 7
         }, undefined);
     };
