@@ -1,4 +1,4 @@
-/Food_ordering_app/.parcel-cache
-/Food_ordering_app/node_modules
-/Food_ordering_app/coverage
-/Food_ordering_app/dist
+**/.parcel-cache
+**/node_modules
+**/coverage
+**/dist
