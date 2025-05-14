@@ -26,6 +26,7 @@ const Body = () => {
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
           <input
             type="text"
+            data-testid="searchbox"
             className="border border-gray-300 h-10 w-64 px-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
             placeholder="Search restaurants..."
             value={searchText}
@@ -45,6 +46,7 @@ const Body = () => {
         </div>
         <input
           type="text"
+          
           className="border border-gray-300 h-10 w-64 px-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
           placeholder="Search Username..."
           value={loggedInUser}

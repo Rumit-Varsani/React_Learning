@@ -6,7 +6,7 @@ const ResturentCard = ({ resData }) => {
 
   const {loggedInUser} = useContext(UserContext);
   return (
-    <div className="bg-gradient-to-br from-white to-indigo-50 p-4 h-auto flex flex-col rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+    <div data-testid="cards" className="bg-gradient-to-br from-white to-indigo-50 p-4 h-auto flex flex-col rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200">
       <img
         className="w-full h-48 object-cover rounded-xl mb-3"
         src={`${CDN_URL}${resData.info.cloudinaryImageId}`}

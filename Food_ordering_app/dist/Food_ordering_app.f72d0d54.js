@@ -55477,6 +55477,7 @@ const Body = ()=>{
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                 type: "text",
+                                "data-testid": "searchbox",
                                 className: "border border-gray-300 h-10 w-64 px-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400",
                                 placeholder: "Search restaurants...",
                                 value: searchText,
@@ -55495,7 +55496,7 @@ const Body = ()=>{
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "src/component/Body.js",
-                                lineNumber: 34,
+                                lineNumber: 35,
                                 columnNumber: 11
                             }, undefined)
                         ]
@@ -55512,7 +55513,7 @@ const Body = ()=>{
                         onChange: (e)=>setShowInfo(e.target.value)
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 46,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -55524,7 +55525,7 @@ const Body = ()=>{
                         children: "Sort by Rating"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 53,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, undefined)
                 ]
@@ -55542,23 +55543,23 @@ const Body = ()=>{
                             resData: restaurant
                         }, void 0, false, {
                             fileName: "src/component/Body.js",
-                            lineNumber: 73,
+                            lineNumber: 75,
                             columnNumber: 15
                         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturentCardDefault.default), {
                             resData: restaurant
                         }, void 0, false, {
                             fileName: "src/component/Body.js",
-                            lineNumber: 75,
+                            lineNumber: 77,
                             columnNumber: 15
                         }, undefined)
                     }, restaurant.info.id, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 67,
+                        lineNumber: 69,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 65,
+                lineNumber: 67,
                 columnNumber: 7
             }, undefined)
         ]
@@ -55605,6 +55606,7 @@ const ResturentCard = ({ resData })=>{
     _s();
     const { loggedInUser } = (0, _react.useContext)((0, _userContextJsDefault.default));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        "data-testid": "cards",
         className: "bg-gradient-to-br from-white to-indigo-50 p-4 h-auto flex flex-col rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -56248,7 +56250,7 @@ $RefreshReg$(_c, "Resturantmenu");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react-router-dom":"61z4w","./Shimmer":"djImw","../Utils/useResturantMenu":"5ezIi","./Restaurantcategory":"aSjP5","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"djImw":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react-router-dom":"61z4w","./Shimmer":"djImw","../Utils/useResturantMenu":"5ezIi","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","./Restaurantcategory":"aSjP5"}],"djImw":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$baf5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$baf5.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -56465,7 +56467,7 @@ $RefreshReg$(_c, "Restaurantcategory");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./ItemList":"hbA99","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"hbA99":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U","./ItemList":"hbA99"}],"hbA99":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$a610 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$a610.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
