@@ -1,4 +1,26 @@
-**/.parcel-cache
-**/node_modules
-**/coverage
-**/dist
+# 📦 Dependency folders
+node_modules/
+
+# 🚀 Build output from Parcel
+dist/
+
+# ⚡ Parcel cache
+.parcel-cache/
+
+# 🌱 Environment variables
+.env
+.env.local
+.env.*.local
+
+# 🧪 Jest & Testing logs
+coverage/
+*.log
+
+# 💻 System and editor configs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 🔧 Vercel
+.vercel/
